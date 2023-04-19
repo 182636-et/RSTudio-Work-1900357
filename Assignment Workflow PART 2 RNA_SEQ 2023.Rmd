@@ -1,0 +1,21 @@
+---
+title: 'Assignment Workflow: RNA Sequencing'
+author: '1900357'
+date: "19/04/2023"
+output: html_document
+---
+
+
+```{r}
+install.packages("DESeq2")
+```
+
+```{r}
+install.packages("https://cran.rstudio.com/bin/windows/Rtools/")
+```
+
+```{r}
+install.packages("edgeR")
+install.packages("RNAseqQC")
+```
+

@@ -1,0 +1,135 @@
+---
+title: "Advanced Bioinformatics 2023 Assignment"
+author: '1900357'
+date: "10/04/2023"
+output:
+  word_document: default
+  html_document: default
+---
+
+General RStudio Task 
+#create vector 
+```{r}
+x <-- c(5-55)
+```
+#sum of all values between 5 and 55
+```{r}
+sum(x)
+```
+#
+```{r}
+nterms = as.integer(readline(prompt="How many terms? "))
+```
+
+```{r}
+n1=1
+n2=1
+count=2
+```
+
+```{r}
+if(nterms <= 0) {
+print("Plese enter a positive integer")
+} else {
+if(nterms == 1) {
+print("Fibonacci sequence:")
+print(n1)
+} else {
+print("Fibonacci sequence:")
+print(n1)
+print(n2)
+while(count < nterms) {
+nth = n1 + n2
+print(nth)
+# update values
+n1 = n2
+n2 = nth
+count = count + 1
+}
+}
+}
+```
+#The "mtcars" dataset is an in-built dataset that provides information in regards to 32 different types of cars. 
+```{r}
+data(mtcars)
+```
+#The head() function allows us to see the first 6 rows of the mtcars dataset. 
+```{r}
+head(mtcars)
+```
+#We can use different plot functions to visualise the dataset. For instance, the coding chunk below creates a histogram for "mpg" values. The '$' specifies only 'mpg' values, whilst the xlab and ylab give the x- and y-axis correct labels. 
+```{r}
+hist(mtcars$mpg,
+     col='steelblue',
+     main='Histogram',
+     xlab='mpg',
+     ylab='Frequency')
+```
+#In order to create a ggplot, we must first install the "ggplots2" package into R.
+```{r}
+install.packages("ggplot2")
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+e <- ggplot(mtcars, aes(x = mpg, y = gear)) +
+  geom_bar() 
+```
+
+```{r}
+e <- ggplot(mtcars, aes(x = mpg, y = gear)) +
+  geom_point() 
+```
+
+```{r}
+e <- 'gglpot_mtcars_dataset'
+```
+
+```{r}
+plot(mtcars$mpg, mtcars$gear,
+     col='magenta',
+     main='MPG-GEAR PLOT',
+     xlab='mpg',
+     ylab='gear',
+     pch=19)
+```
+
+#The plot() function wil be used to plot a graph of speed against breaking distance.
+```{r}
+plot(vs ~ disp, data = mtcars, col=2)
+```
+#Then we are able to use the lm() function, as below:
+```{r}
+fit <- lm(vs ~ disp, data = mtcars)
+```
+
+#This summary() function is one way to view the output. 
+```{r}
+summary(fit)
+```
+```{r}
+plot(vs ~ disp, data = mtcars, col = 3)
+```
+
+```{r}
+fit <- lm(mpg ~ wt, data = mtcars)
+```
+
+```{r}
+require(graphics)
+pairs(mtcars, main = "mtcars data", gap = 1/4)
+coplot(mpg ~ gear | as.factor(gear), data = mtcars,
+       panel = panel.smooth, rows = 1)
+```
+
+```{r}
+require(graphics)
+```
+
+```{r}
+plot(vs ~ disp, data = mtcars, col = 6)
+```
+
